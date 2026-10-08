@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LACC Financial Aid - Redesigned Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        lacc: {
+                            blue: '#1E3A8A', // Deep primary blue
+                            red: '#991B1B',  // Accent rich red
+                            gold: '#D97706', // Alert gold
+                            darkBlue: '#0F172A',
+                            lightBg: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth transition for accordion animations */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.2s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-content.open {
+            max-height: 500px;
+            opacity: 1;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span><i class="fa-solid font-bold fa-globe mr-1 text-slate-400"></i> Language: <strong class="text-white">English</strong></span>
+                <span class="hidden md:inline">|</span>
+                <a href="#" class="hover:text-white transition"><i class="fa-solid fa-graduation-cap mr-1"></i> Canvas</a>
+                <a href="#" class="hover:text-white transition"><i class="fa-solid fa-user-gear mr-1"></i> Student Portal</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-white transition"><i class="fa-solid fa-shield-halved mr-1"></i> Directory</a>
+                <a href="#" class="hover:text-white transition"><i class="fa-solid fa-lock mr-1"></i> Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="bg-lacc-blue text-white p-2.5 rounded-lg font-black text-2xl tracking-wider shadow-sm group-hover:bg-lacc-red transition">
+                    LACC
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg font-extrabold text-slate-900 leading-none tracking-tight">Los Angeles City College</span>
+                    <span class="text-xs font-semibold text-lacc-red tracking-wide uppercase mt-1">Financial Aid Office</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-slate-700">
+                <a href="#" class="hover:text-lacc-blue transition">About</a>
+                <a href="#" class="hover:text-lacc-blue transition">Admissions</a>
+                <a href="#" class="text-lacc-blue border-b-2 border-lacc-blue pb-1">Financial Aid & Tuition</a>
+                <a href="#" class="hover:text-lacc-blue transition">Academics</a>
+                <a href="#" class="hover:text-lacc-blue transition">Student Services</a>
+                <a href="#" class="hover:text-lacc-blue transition">Contact Us</a>
+            </nav>
+
+            <!-- Search & Actions -->
+            <div class="flex items-center space-x-3">
+                <button class="p-2 text-slate-600 hover:text-lacc-blue rounded-full hover:bg-slate-100 transition" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                </button>
+                <a href="#appointment" class="bg-lacc-red hover:bg-red-800 text-white font-semibold text-sm px-4 py-2 rounded-lg shadow-sm transition flex items-center">
+                    <i class="fa-regular fa-calendar-check mr-2"></i> Book Appointment
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-slate-100 border-b border-slate-200 py-2.5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-slate-500 flex items-center space-x-2">
+            <a href="#" class="hover:text-lacc-blue"><i class="fa-solid fa-house"></i> Home</a>
+            <span>/</span>
+            <a href="#" class="hover:text-lacc-blue">Student Services</a>
+            <span>/</span>
+            <span class="text-slate-800 font-semibold">Financial Aid Homepage</span>
+        </div>
+    </div>
+
+    <section class="bg-gradient-to-r from-lacc-blue via-blue-900 to-slate-900 text-white py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+                <span class="inline-block bg-blue-500/20 text-blue-200 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3 border border-blue-400/30">
+                    Student Financial Support
+                </span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Financial Aid Services</h1>
+                <p class="text-blue-100 mt-2 max-w-2xl text-sm sm:text-base leading-relaxed">
+                    We are dedicated to ensuring every student has access to higher education through federal, state, and institutional funding opportunities.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <a href="#aid-programs" class="bg-white text-lacc-blue hover:bg-blue-50 font-bold text-sm px-5 py-2.5 rounded-lg shadow-md transition">
+                    Explore Aid Options
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full space-y-8">
+
+        <section aria-labelledby="announcements-heading" class="bg-amber-50 border-2 border-amber-400/80 rounded-xl p-5 shadow-sm relative overflow-hidden">
+            <div class="absolute -right-6 -bottom-6 text-amber-200/40 text-9xl pointer-events-none">
+                <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <div class="flex items-start space-x-4 relative z-10">
+                <div class="bg-amber-500 text-white p-3 rounded-xl shadow-sm shrink-0 mt-0.5">
+                    <i class="fa-solid fa-bell text-xl animate-bounce"></i>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2 border-b border-amber-200 pb-2">
+                        <h2 id="announcements-heading" class="text-lg font-bold text-amber-950 flex items-center">
+                            URGENT ANNOUNCEMENTS & DEADLINES
+                        </h2>
+                        <span class="text-xs bg-amber-200 text-amber-900 font-bold px-2.5 py-1 rounded-full w-fit">
+                            Updated Fall 2026
+                        </span>
+                    </div>
+                    <ul class="space-y-2 text-sm text-amber-900 font-medium">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1 mr-2 shrink-0"></i>
+                            <span><strong>Financial Aid Disbursement Update:</strong> Fall disbursements are actively processing. Please verify your direct deposit preferences on the portal.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-calendar-day text-amber-700 mt-1 mr-2 shrink-0"></i>
+                            <span><strong>2026-2027 FAFSA & CADAA Open:</strong> The official application window is now open! Submit early to maximize grant eligibility (LACC Code: <strong>001226</strong>).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-triangle-exclamation text-lacc-red mt-1 mr-2 shrink-0"></i>
+                            <span><strong>Student Loan Requirement:</strong> New borrowers must complete Entrance Counseling and a Master Promissory Note before funds release.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
+            <!-- LEFT COLUMN (2/3 Width on Desktop): Financial Aid Programs & Accordions -->
+            <div class="lg:col-span-2 space-y-8" id="aid-programs">
+
+                <!-- SECTION 1: Programs & Accordions -->
+                <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="border-b border-slate-200 pb-4 mb-6">
+                        <h2 class="text-2xl font-bold text-slate-900">Your Financial Aid at LACC</h2>
+                        <p class="text-slate-600 text-sm mt-1">Select an aid type below to review requirements, eligibility criteria, and application links.</p>
+                    </div>
+
+                    <!-- Accordion Stack -->
+                    <div class="space-y-3">
+
+                        <!-- Accordion 1: FAFSA -->
+                        <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50/50">
+                            <button onclick="toggleAccordion('acc1')" class="w-full text-left px-5 py-4 font-semibold text-slate-800 flex justify-between items-center hover:bg-slate-100 transition focus:outline-none">
+                                <span class="flex items-center text-base">
+                                    <i class="fa-solid fa-file-invoice-dollar text-lacc-blue mr-3 text-lg"></i>
+                                    Free Application for Federal Student Aid (FAFSA)
+                                </span>
+                                <i id="icon-acc1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                            </button>
+                            <div id="acc1" class="accordion-content px-5 bg-white border-t border-slate-100">
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    The FAFSA allows US citizens and eligible non-citizens to apply for federal grants, work-study funds, and student loans. Ensure LACC federal school code <strong>001226</strong> is included on your application.
+                                </p>
+                                <a href="#" class="inline-flex items-center text-xs font-bold text-lacc-blue hover:text-blue-900 mt-3 bg-blue-50 px-3 py-2 rounded border border-blue-200">
+                                    Apply on StudentAid.gov <i class="fa-solid fa-arrow-up-right-from-square ml-1.5"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 2: CADAA -->
+                        <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50/50">
+                            <button onclick="toggleAccordion('acc2')" class="w-full text-left px-5 py-4 font-semibold text-slate-800 flex justify-between items-center hover:bg-slate-100 transition focus:outline-none">
+                                <span class="flex items-center text-base">
+                                    <i class="fa-solid fa-sun text-amber-600 mr-3 text-lg"></i>
+                                    California Dream Act Application (CADAA)
+                                </span>
+                                <i id="icon-acc2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                            </button>
+                            <div id="acc2" class="accordion-content px-5 bg-white border-t border-slate-100">
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    The CADAA allows eligible undocumented and AB 540 students to apply for California state financial aid, including Cal Grants and the California College Promise Grant.
+                                </p>
+                                <a href="#" class="inline-flex items-center text-xs font-bold text-amber-800 hover:text-amber-950 mt-3 bg-amber-50 px-3 py-2 rounded border border-amber-200">
+                                    Start CADAA Application <i class="fa-solid fa-arrow-up-right-from-square ml-1.5"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 3: CCPG -->
+                        <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50/50">
+                            <button onclick="toggleAccordion('acc3')" class="w-full text-left px-5 py-4 font-semibold text-slate-800 flex justify-between items-center hover:bg-slate-100 transition focus:outline-none">
+                                <span class="flex items-center text-base">
+                                    <i class="fa-solid fa-certificate text-emerald-600 mr-3 text-lg"></i>
+                                    California College Promise Grant (Fee Waiver)
+                                </span>
+                                <i id="icon-acc3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                            </button>
+                            <div id="acc3" class="accordion-content px-5 bg-white border-t border-slate-100">
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    For eligible California residents, the CCPG waives enrollment fees ($46/unit). Applicants should complete either the FAFSA or CADAA to automatically trigger evaluation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 4: Appeals -->
+                        <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50/50">
+                            <button onclick="toggleAccordion('acc4')" class="w-full text-left px-5 py-4 font-semibold text-slate-800 flex justify-between items-center hover:bg-slate-100 transition focus:outline-none">
+                                <span class="flex items-center text-base">
+                                    <i class="fa-solid fa-scale-balanced text-purple-600 mr-3 text-lg"></i>
+                                    Financial Aid Appeals & SAP Requirements
+                                </span>
+                                <i id="icon-acc4" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                            </button>
+                            <div id="acc4" class="accordion-content px-5 bg-white border-t border-slate-100">
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    If you have experienced extenuating circumstances or need to appeal your Satisfactory Academic Progress (SAP) status, submit an appeal form along with required supporting documentation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 5: Student Loans -->
+                        <div class="border border-slate-200 rounded-lg overflow-hidden bg-slate-50/50">
+                            <button onclick="toggleAccordion('acc5')" class="w-full text-left px-5 py-4 font-semibold text-slate-800 flex justify-between items-center hover:bg-slate-100 transition focus:outline-none">
+                                <span class="flex items-center text-base">
+                                    <i class="fa-solid fa-hand-holding-dollar text-indigo-600 mr-3 text-lg"></i>
+                                    Federal Direct Student Loans
+                                </span>
+                                <i id="icon-acc5" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                            </button>
+                            <div id="acc5" class="accordion-content px-5 bg-white border-t border-slate-100">
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    Low-interest loans funded by the federal government. Remember to borrow responsibly as loans must be repaid with interest.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- SECTION 2: Scholarships -->
+                <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="border-b border-slate-200 pb-4 mb-4">
+                        <h2 class="text-xl font-bold text-slate-900">Scholarships Opportunities</h2>
+                        <p class="text-slate-600 text-sm mt-1">Unlike loans, scholarships do not have to be repaid. Explore available institutional and external opportunities.</p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-lg flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-sm">LACC Foundation Scholarships</h3>
+                                <p class="text-xs text-slate-500 mt-1">Over $1M awarded annually to qualified LACC students.</p>
+                            </div>
+                            <a href="#" class="text-xs font-bold text-lacc-blue hover:underline whitespace-nowrap ml-2">Browse <i class="fa-solid fa-chevron-right ml-1"></i></a>
+                        </div>
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-lg flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-sm">External Search Engines</h3>
+                                <p class="text-xs text-slate-500 mt-1">Vetted list of trusted national scholarship opportunities.</p>
+                            </div>
+                            <a href="#" class="text-xs font-bold text-lacc-blue hover:underline whitespace-nowrap ml-2">View List <i class="fa-solid fa-chevron-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="space-y-6 lg:sticky lg:top-20">
+
+                <!-- SIDEBAR WIDGET 1: Useful Links -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+                    <h3 class="text-base font-bold text-slate-900 border-b border-slate-200 pb-3 flex items-center">
+                        <i class="fa-solid fa-link text-lacc-blue mr-2"></i> Useful Quick Links
+                    </h3>
+                    <ul class="mt-4 space-y-2.5 text-sm">
+                        <li>
+                            <a href="#" class="flex items-center text-slate-700 hover:text-lacc-blue font-medium transition">
+                                <i class="fa-solid fa-angle-right text-xs text-slate-400 mr-2"></i> How to Check Aid Status (SIS)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center text-slate-700 hover:text-lacc-blue font-medium transition">
+                                <i class="fa-solid fa-angle-right text-xs text-slate-400 mr-2"></i> LACCD Portal Login
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center text-slate-700 hover:text-lacc-blue font-medium transition">
+                                <i class="fa-solid fa-angle-right text-xs text-slate-400 mr-2"></i> Financial Aid Forms & Documents
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center text-slate-700 hover:text-lacc-blue font-medium transition">
+                                <i class="fa-solid fa-angle-right text-xs text-slate-400 mr-2"></i> Net Price Calculator
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center text-slate-700 hover:text-lacc-blue font-medium transition">
+                                <i class="fa-solid fa-angle-right text-xs text-slate-400 mr-2"></i> BankMobile Disbursements
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SIDEBAR WIDGET 2: Financial Aid Office Contact & Hours Card -->
+                <div id="appointment" class="bg-gradient-to-br from-slate-900 to-lacc-darkBlue text-white rounded-xl shadow-md p-6 relative overflow-hidden">
+                    <div class="absolute -right-4 -bottom-4 text-white/5 text-8xl">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 class="text-lg font-bold border-b border-slate-700 pb-3 flex items-center">
+                            <i class="fa-solid fa-clock text-amber-400 mr-2"></i> Hours & Contact
+                        </h3>
+
+                        <!-- Hours -->
+                        <div class="mt-4 text-xs space-y-2">
+                            <p class="font-bold text-slate-300 uppercase tracking-wider text-[10px]">In-Person & Online Hours</p>
+                            <div class="flex justify-between border-b border-slate-800 pb-1">
+                                <span class="text-slate-400">Mon - Thu:</span>
+                                <span class="font-semibold">8:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800 pb-1">
+                                <span class="text-slate-400">Friday:</span>
+                                <span class="font-semibold">8:00 AM - 1:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Sat & Sun:</span>
+                                <span class="text-slate-500 italic">Closed</span>
+                            </div>
+                        </div>
+
+                        <!-- Contact Details -->
+                        <div class="mt-5 space-y-2 text-xs">
+                            <p class="font-bold text-slate-300 uppercase tracking-wider text-[10px]">Direct Contact</p>
+                            <p class="flex items-center text-slate-200">
+                                <i class="fa-solid fa-phone text-blue-400 w-5"></i> (323) 953-4000 ext. 2010
+                            </p>
+                            <p class="flex items-center text-slate-200">
+                                <i class="fa-solid fa-envelope text-blue-400 w-5"></i> finaid@lacitycollege.edu
+                            </p>
+                            <p class="flex items-center text-slate-200">
+                                <i class="fa-solid fa-location-dot text-blue-400 w-5"></i> Student Services Bldg, 1st Fl
+                            </p>
+                        </div>
+
+                        <!-- Action Button -->
+                        <div class="mt-6">
+                            <a href="#" class="block w-full text-center bg-lacc-red hover:bg-red-700 text-white font-bold text-sm py-2.5 rounded-lg shadow transition">
+                                <i class="fa-regular fa-calendar-plus mr-1.5"></i> Schedule Appointment
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 text-xs mt-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-white font-bold text-lg mb-3">Los Angeles City College</div>
+                <p class="leading-relaxed">855 N. Vermont Avenue<br>Los Angeles, CA 90029</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Quick Navigation</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">Admissions</a></li>
+                    <li><a href="#" class="hover:underline">Academics</a></li>
+                    <li><a href="#" class="hover:underline">Financial Aid</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">LACCD District</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">District Homepage</a></li>
+                    <li><a href="#" class="hover:underline">Board of Trustees</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Connect With Us</h4>
+                <div class="flex space-x-3 text-lg text-slate-300">
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-slate-950 py-4 text-center text-slate-600 border-t border-slate-800">
+            © 2026 Los Angeles City College. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Close all other accordions for clean UX
+                document.querySelectorAll('.accordion-content').forEach(el => el.classList.remove('open'));
+                document.querySelectorAll('[id^="icon-"]').forEach(el => el.style.transform = 'rotate(0deg)');
+
+                content.classList.add('open');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+</body>
+</html>
